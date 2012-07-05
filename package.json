@@ -2,7 +2,7 @@
   "name": "stream-splitter",
   "version": "0.0.1",
   "description": "Split streaming binary data like a pro!",
-  "main": "index.js",
+  "main": "lib/splitter.js",
   "scripts": {
     "test": "mocha"
   },
