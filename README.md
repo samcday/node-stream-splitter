@@ -52,6 +52,10 @@ chain a newly created ReadableStream straight into a StreamSplitter.
 * This lib is designed to be as efficient as possible, making use of 
 substack/node-buffers library to avoid unnecessary `Buffer` allocations/copies.
 
+## Tests
+
+`npm test`
+
 ## (Un)License
 
 This is free and unencumbered software released into the public domain.
