@@ -2,29 +2,31 @@
 
 Split them streams, in style!
 
-	var fs = require("fs");
-	var StreamSplitter = require("stream-splitter");
+```javascript
+var fs = require("fs");
+var StreamSplitter = require("stream-splitter");
 
-	var splitter = fs.createReadStream("afile.txt").pipe(StreamSplitter("\n"));
+var splitter = fs.createReadStream("afile.txt").pipe(StreamSplitter("\n"));
 
-	// Set encoding on the splitter Stream, so tokens come back as a String.
-	splitter.encoding = "utf8";
+// Set encoding on the splitter Stream, so tokens come back as a String.
+splitter.encoding = "utf8";
 
-	splitter.on("token", function(token) {
-		console.log("A line of input:", token);
-	});
+splitter.on("token", function(token) {
+	console.log("A line of input:", token);
+});
 
-	splitter.on("done", function() {
-		console.log("And that's all folks!");
-	});
+splitter.on("done", function() {
+	console.log("And that's all folks!");
+});
 
-	splitter.on("error", function(err) {
-		// Any errors that occur on a source stream will be emitted on the 
-		// splitter Stream, if the source stream is piped into the splitter 
-		// Stream, and if the source stream doesn't have any other error
-		// handlers registered.
-		console.error("Oh noes!", err);
-	});
+splitter.on("error", function(err) {
+	// Any errors that occur on a source stream will be emitted on the 
+	// splitter Stream, if the source stream is piped into the splitter 
+	// Stream, and if the source stream doesn't have any other error
+	// handlers registered.
+	console.error("Oh noes!", err);
+});
+```
 
 ## Installation
 
@@ -32,11 +34,15 @@ Split them streams, in style!
 
 ## API
 
-	StreamSplitter = require("stream-splitter")
+```javascript
+StreamSplitter = require("stream-splitter")
+```
 
 `StreamSplitter` accepts a single argument, and returns a `WritableStream`:
 
+```javascript
 	aWritableStream = StreamSplitter(token);
+```
 
 ## Usage
 
@@ -54,7 +60,9 @@ substack/node-buffers library to avoid unnecessary `Buffer` allocations/copies.
 
 ## Tests
 
-`npm test`
+Checkout the repository and run
+
+`npm install && npm test`
 
 ## (Un)License
 
