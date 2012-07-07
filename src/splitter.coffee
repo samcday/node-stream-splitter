@@ -1,5 +1,5 @@
 buffers = require "buffers"
-Stream = stream = require "stream"
+Stream = require "stream"
 
 module.exports = splitter = (delim) ->
 	stream = new Stream()
