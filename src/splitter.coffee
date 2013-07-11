@@ -26,6 +26,7 @@ module.exports = splitter = (delim) ->
 		buf.splice 0, finalIndex if finalIndex > -1
 
 	stream.write = (data, encoding) ->
+		stream.emit "data", data
 		data = new Buffer data, encoding if "string" is typeof data
 		buf.push data
 		doSplit()

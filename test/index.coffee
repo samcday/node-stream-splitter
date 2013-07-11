@@ -77,3 +77,19 @@ describe "StreamSplitter", ->
 			done()
 		splitter.write "Hello"
 		splitter.end()
+	it "still emits data events", (done) ->
+		splitter = StreamSplitter ","
+		splitter.encoding = "utf8"
+		tokens = []
+		dataEmitted = false
+		splitter.on "token", (token) ->
+			tokens.push token
+		splitter.on "done", ->
+			tokens.should.eql ["Hello", "World"]
+			dataEmitted.should.be.true
+			done()
+		splitter.on "data", (data) ->
+			data.should.eql "Hello,World"
+			dataEmitted = true
+		splitter.write "Hello,World"
+		splitter.end()
