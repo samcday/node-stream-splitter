@@ -59,3 +59,9 @@ describe "StreamSplitter", ->
 		splitter.on "done", ->
 			octets.should.eql [1, 2, 3, 255]
 			done()
+	it "doesn't freak out when not being piped to", (done) ->
+		splitter = StreamSplitter "\n"
+		splitter.on "done", ->
+			done()
+		splitter.end()
+

@@ -38,7 +38,7 @@ module.exports = splitter = (delim) ->
 		emitToken buf.toBuffer() if buf.length
 		stream.emit "done"
 
-		src.removeListener "error", srcErrorHandler
+		src and src.removeListener "error", srcErrorHandler
 
 	# We log src stream fails if no one else is listening for them.
 	srcErrorHandler = (err) ->
