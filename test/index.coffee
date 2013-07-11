@@ -65,3 +65,15 @@ describe "StreamSplitter", ->
 			done()
 		splitter.end()
 
+	it "splits an ended stream properly", (done) ->
+		splitter = StreamSplitter "\n"
+		splitter.encoding = "utf8"
+		gotToken = false
+		splitter.on "token", (token) ->
+			token.should.eql "Hello"
+			gotToken = true
+		splitter.on "done", ->
+			gotToken.should.be.true
+			done()
+		splitter.write "Hello"
+		splitter.end()
