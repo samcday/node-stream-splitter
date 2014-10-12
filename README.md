@@ -1,6 +1,6 @@
 # stream-splitter `0.3.0`
 
-[![build status](https://secure.travis-ci.org/samcday/stream-splitter.png)](http://travis-ci.org/samcday/stream-splitter)
+[![build status](https://secure.travis-ci.org/samcday/node-stream-splitter.png)](http://travis-ci.org/samcday/node-stream-splitter)
 
 Split them streams, in style!
 
