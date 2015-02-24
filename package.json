@@ -1,6 +1,6 @@
 {
   "name": "stream-splitter",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Split streaming binary data like a pro!",
   "main": "lib/splitter.js",
   "scripts": {
