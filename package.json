@@ -4,6 +4,7 @@
   "description": "Split streaming binary data like a pro!",
   "main": "lib/splitter.js",
   "scripts": {
+    "prepublish": "cake build",
     "test": "mocha"
   },
   "author": "Sam Day",
