@@ -1,4 +1,4 @@
-# stream-splitter `0.3.0`
+# stream-splitter
 
 [![build status](https://secure.travis-ci.org/samcday/node-stream-splitter.png)](http://travis-ci.org/samcday/node-stream-splitter)
 
